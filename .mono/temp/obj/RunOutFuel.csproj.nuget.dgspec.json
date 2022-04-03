@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/leniggo/Godot/RunOutFuel/RunOutFuel.csproj": {}
+  },
+  "projects": {
+    "/home/leniggo/Godot/RunOutFuel/RunOutFuel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/leniggo/Godot/RunOutFuel/RunOutFuel.csproj",
+        "projectName": "RunOutFuel",
+        "projectPath": "/home/leniggo/Godot/RunOutFuel/RunOutFuel.csproj",
+        "packagesPath": "/home/leniggo/.nuget/packages/",
+        "outputPath": "/home/leniggo/Godot/RunOutFuel/.mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/leniggo/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "targetAlias": "net472",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "targetAlias": "net472",
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.2, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.102/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
