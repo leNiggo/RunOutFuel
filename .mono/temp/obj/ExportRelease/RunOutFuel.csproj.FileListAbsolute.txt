@@ -1,0 +1,9 @@
+/home/leniggo/Godot/RunOutFuel/.mono/temp/bin/ExportRelease/RunOutFuel.dll
+/home/leniggo/Godot/RunOutFuel/.mono/temp/bin/ExportRelease/RunOutFuel.pdb
+/home/leniggo/Godot/RunOutFuel/.mono/temp/obj/ExportRelease/RunOutFuel.csproj.AssemblyReference.cache
+/home/leniggo/Godot/RunOutFuel/.mono/temp/obj/ExportRelease/RunOutFuel.GeneratedMSBuildEditorConfig.editorconfig
+/home/leniggo/Godot/RunOutFuel/.mono/temp/obj/ExportRelease/RunOutFuel.AssemblyInfoInputs.cache
+/home/leniggo/Godot/RunOutFuel/.mono/temp/obj/ExportRelease/RunOutFuel.AssemblyInfo.cs
+/home/leniggo/Godot/RunOutFuel/.mono/temp/obj/ExportRelease/RunOutFuel.csproj.CoreCompileInputs.cache
+/home/leniggo/Godot/RunOutFuel/.mono/temp/obj/ExportRelease/RunOutFuel.dll
+/home/leniggo/Godot/RunOutFuel/.mono/temp/obj/ExportRelease/RunOutFuel.pdb

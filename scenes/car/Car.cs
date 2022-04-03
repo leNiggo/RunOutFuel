@@ -22,7 +22,9 @@ public class Car : VehicleBody
 
     
     [Export] public int Cash = 1000;
+    [Export] public int IncomeCash = 100;
     [Export] public int InitScore;
+    
     
     public float Fuel;
 
@@ -37,9 +39,19 @@ public class Car : VehicleBody
 
     [Signal]
     public delegate void FuelUpStatusChanged(bool status);
+
+    [Signal]
+    public delegate void DeliveredCounterChanged(int count);
+
+    [Signal]
+    public delegate void GameOver(); 
+    
     
     private bool _isNearPumpStation;
     private bool _hasFueldUp;
+
+    private bool _hasCasePickedUp;
+    private int _deliverdCounter;
 
     public override void _Ready()
     {
@@ -49,6 +61,7 @@ public class Car : VehicleBody
         Connect(nameof(CashChanged), guiNode, "OnCashChanged");
         Connect(nameof(ScoreChanged), guiNode, "OnScoreChanged");
         Connect(nameof(FuelUpStatusChanged), guiNode, "OnFuelUpStatusChanged");
+        Connect(nameof(DeliveredCounterChanged), guiNode, "OnDeliveredCounterChanged");
         
         EmitSignal(nameof(CashChanged), Cash);
         EmitSignal(nameof(FuelUpStatusChanged), _isNearPumpStation);
@@ -57,7 +70,8 @@ public class Car : VehicleBody
   public override void _Process(float delta)
   {
       var throatInput = -Input.GetActionStrength("forward") + Input.GetActionStrength("backward");
-      if (EngineForce < -2f)
+      GD.Print(EngineForce);
+      if (EngineForce != 0)
       {
           Fuel -= FuelConsumption * 0.01f;
           EmitSignal(nameof(FuelChanged), Fuel);
@@ -74,9 +88,23 @@ public class Car : VehicleBody
       {
           FuelUp(1);
       }
+
+      if (Input.IsActionJustPressed("reset") && Cash > 200 && Fuel > 0)
+      {
+          Translation = new Vector3(80, 2, -100);
+          Rotation = Vector3.Zero;
+          
+          Cash -= 200;
+          EmitSignal(nameof(CashChanged), Cash);
+      }
       
   }
 
+  public void YouLoose()
+  {
+      EmitSignal(nameof(GameOver));
+  }
+  
   public void OnPumpEnter()
   {
       _isNearPumpStation = true;
@@ -110,6 +138,33 @@ public class Car : VehicleBody
       EmitSignal(nameof(FuelChanged), Fuel);
 
 
+  }
+
+  public bool HasPickedUpCase()
+  {
+      return _hasCasePickedUp;
+  }
+  
+  public void PickedUpCase()
+  {
+     var suitCaseNode = GD.Load<PackedScene>("res://scenes/suitcase/suitcase.tscn");
+     AddChild(suitCaseNode.Instance());
+     var suitCase = GetNode<Suitcase>("suitcase");
+
+     suitCase.Translation = new Vector3(0, 2, 0);
+    
+      _hasCasePickedUp = true;
+  }
+
+  public void DropCase()
+  {
+      _hasCasePickedUp = false;
+      var suitcase = GetNode<Suitcase>("suitcase");
+      RemoveChild(suitcase);
+      Cash += IncomeCash;
+      EmitSignal(nameof(CashChanged), Cash);
+      _deliverdCounter++;
+      EmitSignal(nameof(DeliveredCounterChanged), _deliverdCounter);
   }
   
 }

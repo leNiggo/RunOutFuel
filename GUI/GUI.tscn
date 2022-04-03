@@ -1,6 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GUI/FuelCounter.cs" type="Script" id=1]
+
+[sub_resource type="Gradient" id=7]
+offsets = PoolRealArray( 0.635468, 1 )
+colors = PoolColorArray( 0.28887, 0.0457204, 0.53202, 1, 0.542969, 0.0859375, 1, 1 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
 
 [sub_resource type="Gradient" id=1]
 colors = PoolColorArray( 1, 0.348022, 0.148438, 1, 0.155869, 0.886719, 0.201547, 1 )
@@ -37,9 +44,31 @@ margin_bottom = 576.0
 margin_right = 200.0
 margin_bottom = 576.0
 
-[node name="Bar" type="HBoxContainer" parent="HBoxContainer/Bars"]
+[node name="DeliveredCounter" type="VBoxContainer" parent="HBoxContainer/Bars"]
 margin_right = 200.0
 margin_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Bars/DeliveredCounter"]
+margin_right = 200.0
+margin_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/Bars/DeliveredCounter/MarginContainer"]
+margin_right = 200.0
+margin_bottom = 40.0
+texture = SubResource( 8 )
+
+[node name="Label" type="Label" parent="HBoxContainer/Bars/DeliveredCounter/MarginContainer"]
+margin_right = 200.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 40 )
+text = "Delivered: 0"
+align = 1
+valign = 1
+
+[node name="Bar" type="HBoxContainer" parent="HBoxContainer/Bars"]
+margin_top = 44.0
+margin_right = 200.0
+margin_bottom = 84.0
 
 [node name="Count" type="MarginContainer" parent="HBoxContainer/Bars/Bar"]
 margin_right = 200.0
@@ -60,9 +89,9 @@ align = 1
 valign = 1
 
 [node name="CashBar" type="VBoxContainer" parent="HBoxContainer/Bars"]
-margin_top = 44.0
+margin_top = 88.0
 margin_right = 200.0
-margin_bottom = 84.0
+margin_bottom = 128.0
 
 [node name="Cash" type="MarginContainer" parent="HBoxContainer/Bars/CashBar"]
 margin_right = 200.0
@@ -83,9 +112,9 @@ align = 1
 valign = 1
 
 [node name="fuelUp" type="VBoxContainer" parent="HBoxContainer/Bars"]
-margin_top = 88.0
+margin_top = 132.0
 margin_right = 200.0
-margin_bottom = 132.0
+margin_bottom = 176.0
 
 [node name="fuelUpContainer" type="MarginContainer" parent="HBoxContainer/Bars/fuelUp"]
 margin_right = 200.0
