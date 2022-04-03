@@ -3,8 +3,6 @@ using System;
 
 public class GasPumpArea : Area
 {
-
-    [Export] public int CostPerLiter = 1;
     
     public void OnEnter(Node node)
     {

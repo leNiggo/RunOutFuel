@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://GUI/FuelCounter.cs" type="Script" id=1]
 
@@ -14,6 +14,13 @@ colors = PoolColorArray( 0.235639, 0.520102, 0.166595, 1, 0.398201, 0.878906, 0.
 
 [sub_resource type="GradientTexture" id=4]
 gradient = SubResource( 3 )
+
+[sub_resource type="Gradient" id=5]
+offsets = PoolRealArray( 0.614232, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
 
 [node name="GUI" type="MarginContainer"]
 margin_left = 20.0
@@ -74,6 +81,35 @@ margin_bottom = 27.0
 text = "EUR"
 align = 1
 valign = 1
+
+[node name="fuelUp" type="VBoxContainer" parent="HBoxContainer/Bars"]
+margin_top = 88.0
+margin_right = 200.0
+margin_bottom = 132.0
+
+[node name="fuelUpContainer" type="MarginContainer" parent="HBoxContainer/Bars/fuelUp"]
+margin_right = 200.0
+margin_bottom = 40.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/Bars/fuelUp/fuelUpContainer"]
+margin_right = 200.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 40 )
+texture = SubResource( 6 )
+
+[node name="Label" type="Label" parent="HBoxContainer/Bars/fuelUp/fuelUpContainer"]
+margin_top = 13.0
+margin_right = 200.0
+margin_bottom = 27.0
+text = "Press \"E\" to fuel up"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="TextEdit" type="TextEdit" parent="HBoxContainer/Bars/fuelUp"]
+margin_top = 44.0
+margin_right = 200.0
+margin_bottom = 44.0
 
 [node name="Counters" type="HBoxContainer" parent="HBoxContainer"]
 margin_left = 204.0

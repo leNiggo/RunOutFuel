@@ -17,6 +17,10 @@ public class Car : VehicleBody
     [Export] public int MaxFuel = 100;
     [Export] public float FuelConsumption = 1;
     
+    [Export] public int CostPerLiter = 1;
+    [Export] public int CostIncrease = 1;
+
+    
     [Export] public int Cash = 1000;
     [Export] public int InitScore;
     
@@ -34,7 +38,8 @@ public class Car : VehicleBody
     [Signal]
     public delegate void FuelUpStatusChanged(bool status);
     
-    private bool _isNearPumpStation = false;
+    private bool _isNearPumpStation;
+    private bool _hasFueldUp;
 
     public override void _Ready()
     {
@@ -46,7 +51,7 @@ public class Car : VehicleBody
         Connect(nameof(FuelUpStatusChanged), guiNode, "OnFuelUpStatusChanged");
         
         EmitSignal(nameof(CashChanged), Cash);
-
+        EmitSignal(nameof(FuelUpStatusChanged), _isNearPumpStation);
     }
 
   public override void _Process(float delta)
@@ -64,6 +69,11 @@ public class Car : VehicleBody
 
       var breakInput = Input.GetActionStrength("break");
       Brake = Mathf.Lerp(Brake, breakInput * BrakePower, BrakeSpeed * delta);
+
+      if (Input.IsActionPressed("fuelUp") && _isNearPumpStation)
+      {
+          FuelUp(1);
+      }
       
   }
 
@@ -77,6 +87,29 @@ public class Car : VehicleBody
   {
       _isNearPumpStation = false;
       EmitSignal(nameof(FuelUpStatusChanged), _isNearPumpStation);
+      if (_hasFueldUp)
+      {
+          CostPerLiter += CostIncrease;
+      }
+  }
+
+  public void FuelUp(int fuel)
+  {
+      if (!_hasFueldUp)
+      {
+          _hasFueldUp = true;
+          
+      }
+      var roundedFuel = Mathf.Round(Fuel);
+      if (roundedFuel >= MaxFuel ) {return;}
+      if (Cash <= 0) {return;}
+      if (Cash < CostPerLiter) {return;}
+      Cash -= CostPerLiter;
+      Fuel += fuel;
+      EmitSignal(nameof(CashChanged), Cash);
+      EmitSignal(nameof(FuelChanged), Fuel);
+
+
   }
   
 }

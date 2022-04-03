@@ -6,6 +6,7 @@ public class FuelCounter : MarginContainer
 {
 	private Label _numberLabel;
 	private Label _cashLabel;
+	private MarginContainer _fuelUpText;
 	
 
 	public override void _Ready()
@@ -13,6 +14,7 @@ public class FuelCounter : MarginContainer
 		const string rootPath = "HBoxContainer/Bars/";
 		_numberLabel = GetNode<Label>(rootPath + "Bar/Count/Number");
 		_cashLabel = GetNode<Label>(rootPath + "CashBar/Cash/Label");
+		_fuelUpText = GetNode<MarginContainer>(rootPath + "fuelUp/fuelUpContainer");
 	}
 	
 	public void OnCarFuelChanged(float fuel)
@@ -29,6 +31,6 @@ public class FuelCounter : MarginContainer
 
 	public void OnFuelUpStatusChanged(bool status)
 	{
-		
+		_fuelUpText.Visible = status;
 	}
 }
