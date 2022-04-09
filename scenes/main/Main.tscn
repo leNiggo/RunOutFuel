@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=2]
@@ -7,11 +7,13 @@
 [ext_resource path="res://textures/imports/Main_slot1_albedo_bump.packed_tex" type="Texture" id=5]
 [ext_resource path="res://textures/imports/Main_slot1_normal_roughness.packed_tex" type="Texture" id=6]
 [ext_resource path="res://textures/imports/Main_slot0_normal_roughness.packed_tex" type="Texture" id=7]
+[ext_resource path="res://textures/imports/Main_slot2_normal_roughness.packed_tex" type="Texture" id=8]
+[ext_resource path="res://textures/imports/Main_slot2_albedo_bump.packed_tex" type="Texture" id=9]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
 mode = 0
-textures = [ [ ExtResource( 4 ), ExtResource( 5 ) ], [ ExtResource( 7 ), ExtResource( 6 ) ] ]
+textures = [ [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 9 ) ], [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ) ] ]
 
 [node name="World" type="Spatial"]
 
