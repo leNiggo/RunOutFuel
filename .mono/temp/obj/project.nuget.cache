@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "lh81qSfkODdy9Ly1rqxi1q9HIB4M9utPmDCeSFIf/nhoyEV0by8bU6o4YL6nq1ljUUQgGXmMpAmotcUF+dbVrA==",
+  "dgSpecHash": "Z0u9a7Zw1Bo6TVGEcGZ0v52gHY+2XEkhcUJFqM/sf10CAfpphr5/QEGEs0YNyGni86h70ujYMvLNSB0048GKfA==",
   "success": true,
   "projectFilePath": "/home/leniggo/Godot/RunOutFuel/RunOutFuel.csproj",
   "expectedPackageFiles": [
-    "/home/leniggo/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.2/microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
-    "/home/leniggo/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.2/microsoft.netframework.referenceassemblies.net472.1.0.2.nupkg.sha512"
+    "/home/leniggo/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.0/microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "/home/leniggo/.nuget/packages/microsoft.netframework.referenceassemblies.net472/1.0.0/microsoft.netframework.referenceassemblies.net472.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }
