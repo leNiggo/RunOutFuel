@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=2]
@@ -7,13 +7,14 @@
 [ext_resource path="res://textures/imports/Main_slot1_albedo_bump.packed_tex" type="Texture" id=5]
 [ext_resource path="res://textures/imports/Main_slot1_normal_roughness.packed_tex" type="Texture" id=6]
 [ext_resource path="res://textures/imports/Main_slot0_normal_roughness.packed_tex" type="Texture" id=7]
-[ext_resource path="res://textures/imports/Main_slot2_normal_roughness.packed_tex" type="Texture" id=8]
-[ext_resource path="res://textures/imports/Main_slot2_albedo_bump.packed_tex" type="Texture" id=9]
+[ext_resource path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" type="Script" id=8]
+[ext_resource path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" type="Texture" id=9]
+[ext_resource path="res://textures/grassBundle/Foliage001_1K_Color.png" type="Texture" id=10]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
 mode = 0
-textures = [ [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 9 ) ], [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ) ] ]
+textures = [ [ ExtResource( 4 ), ExtResource( 5 ) ], [ ExtResource( 7 ), ExtResource( 6 ) ] ]
 
 [node name="World" type="Spatial"]
 
@@ -32,3 +33,14 @@ shader_params/u_ground_uv_scale = 20
 shader_params/u_depth_blending = true
 shader_params/u_triplanar = false
 shader_params/u_tile_reduction = Plane( 0, 0, 0, 0 )
+
+[node name="Grass" type="Spatial" parent="HTerrain"]
+script = ExtResource( 8 )
+__meta__ = {
+"_editor_icon": ExtResource( 9 )
+}
+texture = ExtResource( 10 )
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3( 1, 1, 1 )
