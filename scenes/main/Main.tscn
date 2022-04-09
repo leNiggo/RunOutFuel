@@ -34,9 +34,13 @@ background_sky = SubResource( 2 )
 ambient_light_color = Color( 0.5, 0.5, 0.5, 1 )
 ambient_light_energy = 3.0
 ambient_light_sky_contribution = 0.3
+fog_enabled = true
+fog_depth_end = 400.0
+fog_transmit_enabled = true
 ssao_enabled = true
-dof_blur_far_distance = 114.8
-dof_blur_far_transition = 30.2
+dof_blur_far_enabled = true
+dof_blur_far_distance = 130.0
+dof_blur_far_transition = 125.0
 glow_enabled = true
 
 [node name="World" type="Spatial"]
@@ -64,9 +68,11 @@ __meta__ = {
 "_editor_icon": ExtResource( 9 )
 }
 texture = ExtResource( 10 )
-shader_params/u_globalmap_tint_bottom = null
-shader_params/u_globalmap_tint_top = null
-shader_params/u_bottom_ao = null
+view_distance = 200.0
+density = 10.0
+shader_params/u_globalmap_tint_bottom = 0.0
+shader_params/u_globalmap_tint_top = 0.0
+shader_params/u_bottom_ao = 0.0
 shader_params/u_instance_scale = Vector3( 1, 1, 1 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
