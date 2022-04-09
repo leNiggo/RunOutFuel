@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/stone-lowpoly.obj-b1d188f604f707af3eef4fd8b7108cb3.mesh"
+
+[deps]
+
+files=[ "res://.import/stone-lowpoly.obj-b1d188f604f707af3eef4fd8b7108cb3.mesh" ]
+
+source_file="res://model/stone/stone-lowpoly.obj"
+dest_files=[ "res://.import/stone-lowpoly.obj-b1d188f604f707af3eef4fd8b7108cb3.mesh", "res://.import/stone-lowpoly.obj-b1d188f604f707af3eef4fd8b7108cb3.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

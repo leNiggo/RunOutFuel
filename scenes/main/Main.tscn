@@ -13,7 +13,7 @@
 [ext_resource path="res://textures/imports/Main_slot2_normal_roughness.packed_tex" type="Texture" id=11]
 [ext_resource path="res://textures/imports/Main_slot2_albedo_bump.packed_tex" type="Texture" id=12]
 [ext_resource path="res://scenes/prefab/Stone.tscn" type="PackedScene" id=13]
-[ext_resource path="res://model/stone/stone.obj" type="ArrayMesh" id=14]
+[ext_resource path="res://model/stone/stone-lowpoly.obj" type="ArrayMesh" id=14]
 [ext_resource path="res://textures/rock/Rock020/Rock020_1K_Color.jpg" type="Texture" id=15]
 
 [sub_resource type="Resource" id=1]
