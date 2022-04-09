@@ -193,7 +193,7 @@ shader_params/u_bottom_ao = null
 shader_params/u_instance_scale = Vector3( 0.3, 0.3, 0.3 )
 
 [node name="Stone" parent="." instance=ExtResource( 13 )]
-transform = Transform( 8.02873, 0, 0, 0, 8.02873, 0, 0, 0, 8.02873, 29.0295, 8.88361, 36.2459 )
+transform = Transform( 8.02873, 0, 0, 0, 8.02873, 0, 0, 0, 8.02873, 29.0295, -0.754674, 36.2459 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 3 )
