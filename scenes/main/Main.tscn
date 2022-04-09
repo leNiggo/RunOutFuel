@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=2]
@@ -10,16 +10,40 @@
 [ext_resource path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" type="Script" id=8]
 [ext_resource path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" type="Texture" id=9]
 [ext_resource path="res://textures/grassBundle/Foliage001_1K_Color.png" type="Texture" id=10]
+[ext_resource path="res://textures/imports/Main_slot2_normal_roughness.packed_tex" type="Texture" id=11]
+[ext_resource path="res://textures/imports/Main_slot2_albedo_bump.packed_tex" type="Texture" id=12]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
 mode = 0
-textures = [ [ ExtResource( 4 ), ExtResource( 5 ) ], [ ExtResource( 7 ), ExtResource( 6 ) ] ]
+textures = [ [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 12 ) ], [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 11 ) ] ]
+
+[sub_resource type="ProceduralSky" id=2]
+sky_top_color = Color( 0.301961, 0.407843, 0.658824, 1 )
+sky_horizon_color = Color( 0.482353, 0.682353, 0.870588, 1 )
+sky_curve = 0.13
+ground_bottom_color = Color( 0.545098, 0.686275, 0.811765, 1 )
+ground_horizon_color = Color( 0.545098, 0.686275, 0.811765, 1 )
+sun_latitude = 50.0
+sun_angle_max = 30.0
+sun_energy = 30.0
+
+[sub_resource type="Environment" id=3]
+background_mode = 2
+background_sky = SubResource( 2 )
+ambient_light_color = Color( 0.5, 0.5, 0.5, 1 )
+ambient_light_energy = 3.0
+ambient_light_sky_contribution = 0.3
+ssao_enabled = true
+dof_blur_far_distance = 114.8
+dof_blur_far_transition = 30.2
+glow_enabled = true
 
 [node name="World" type="Spatial"]
 
 [node name="HTerrain" type="Spatial" parent="."]
 script = ExtResource( 1 )
+ambient_wind = 0.2
 _terrain_data = ExtResource( 3 )
 chunk_size = 32
 collision_enabled = true
@@ -44,3 +68,12 @@ shader_params/u_globalmap_tint_bottom = null
 shader_params/u_globalmap_tint_top = null
 shader_params/u_bottom_ao = null
 shader_params/u_instance_scale = Vector3( 1, 1, 1 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
+transform = Transform( 1, 0, 0, 0, -0.642788, 0.766045, 0, -0.766045, -0.642788, 500, 100, 500 )
+light_color = Color( 1, 0.988235, 0.737255, 1 )
+light_energy = 1.652
+shadow_enabled = true
