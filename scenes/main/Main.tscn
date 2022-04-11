@@ -15,7 +15,7 @@
 [ext_resource path="res://model/stone/Stone.tscn" type="PackedScene" id=13]
 [ext_resource path="res://model/stone/stone-lowpoly.obj" type="ArrayMesh" id=14]
 [ext_resource path="res://textures/rock/Rock020/Rock020_1K_Color.jpg" type="Texture" id=15]
-[ext_resource path="res://model/house1/house1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/main/HousePeter.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
@@ -205,5 +205,5 @@ light_color = Color( 1, 0.988235, 0.737255, 1 )
 light_energy = 1.652
 shadow_enabled = true
 
-[node name="House1" parent="." instance=ExtResource( 16 )]
-transform = Transform( -0.995724, -0.00192155, 0.0923601, -0.00192077, 0.999998, 9.73762e-05, -0.0923601, -8.04447e-05, -0.995726, 29.4663, 1.69392, 9.21955 )
+[node name="house1" parent="." instance=ExtResource( 16 )]
+transform = Transform( -0.999181, 0, 0.040463, 0, 1, 0, -0.040463, 0, -0.999181, 27.659, 1.35707, 10.8267 )
