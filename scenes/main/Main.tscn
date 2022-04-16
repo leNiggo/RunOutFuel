@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://addons/zylann.hterrain/hterrain.gd" type="Script" id=1]
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=2]
 [ext_resource path="res://terrain/data.hterrain" type="Resource" id=3]
 [ext_resource path="res://textures/imports/Main_slot0_albedo_bump.packed_tex" type="Texture" id=4]
+[ext_resource path="res://scenes/main/PizzaPazza.tscn" type="PackedScene" id=5]
 [ext_resource path="res://textures/imports/Main_slot0_normal_roughness.packed_tex" type="Texture" id=7]
 [ext_resource path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" type="Script" id=8]
 [ext_resource path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" type="Texture" id=9]
@@ -202,3 +203,6 @@ shadow_enabled = true
 
 [node name="house1" parent="." instance=ExtResource( 16 )]
 transform = Transform( -0.999181, 0, 0.040463, 0, 1, 0, -0.040463, 0, -0.999181, 27.659, 1.35707, 10.8267 )
+
+[node name="Spatial" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.993847, 0, -0.110758, 0, 1, 0, 0.110758, 0, -0.993847, 45.1479, 1.19932, 13.0152 )
