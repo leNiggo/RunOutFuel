@@ -4,22 +4,22 @@
 [ext_resource path="res://addons/zylann.hterrain/hterrain_texture_set.gd" type="Script" id=2]
 [ext_resource path="res://terrain/data.hterrain" type="Resource" id=3]
 [ext_resource path="res://textures/imports/Main_slot0_albedo_bump.packed_tex" type="Texture" id=4]
-[ext_resource path="res://textures/imports/Main_slot1_albedo_bump.packed_tex" type="Texture" id=5]
-[ext_resource path="res://textures/imports/Main_slot1_normal_roughness.packed_tex" type="Texture" id=6]
+[ext_resource path="res://scenes/main/PizzaPazza.tscn" type="PackedScene" id=5]
 [ext_resource path="res://textures/imports/Main_slot0_normal_roughness.packed_tex" type="Texture" id=7]
 [ext_resource path="res://addons/zylann.hterrain/hterrain_detail_layer.gd" type="Script" id=8]
 [ext_resource path="res://addons/zylann.hterrain/tools/icons/icon_detail_layer_node.svg" type="Texture" id=9]
 [ext_resource path="res://textures/grassBundle/Foliage001_1K_Color.png" type="Texture" id=10]
-[ext_resource path="res://textures/imports/Main_slot2_normal_roughness.packed_tex" type="Texture" id=11]
-[ext_resource path="res://textures/imports/Main_slot2_albedo_bump.packed_tex" type="Texture" id=12]
-[ext_resource path="res://scenes/prefab/Stone.tscn" type="PackedScene" id=13]
+[ext_resource path="res://textures/imports/Main_slot1_normal_roughness.packed_tex" type="Texture" id=11]
+[ext_resource path="res://textures/imports/Main_slot1_albedo_bump.packed_tex" type="Texture" id=12]
+[ext_resource path="res://model/stone/Stone.tscn" type="PackedScene" id=13]
 [ext_resource path="res://model/stone/stone-lowpoly.obj" type="ArrayMesh" id=14]
 [ext_resource path="res://textures/rock/Rock020/Rock020_1K_Color.jpg" type="Texture" id=15]
+[ext_resource path="res://scenes/main/HousePeter.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
 mode = 0
-textures = [ [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 12 ) ], [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 11 ) ] ]
+textures = [ [ ExtResource( 4 ), ExtResource( 12 ), ExtResource( 12 ) ], [ ExtResource( 7 ), ExtResource( 11 ), ExtResource( 11 ) ] ]
 
 [sub_resource type="Shader" id=4]
 code = "shader_type spatial;
@@ -165,25 +165,22 @@ shader_params/u_triplanar = false
 shader_params/u_tile_reduction = Plane( 0, 0, 0, 0 )
 
 [node name="Grass" type="Spatial" parent="HTerrain"]
-transform = Transform( 0.997556, 0.0046477, -0.0697186, -0.00100274, 0.998635, 0.0522253, 0.0698661, -0.0520277, 0.996199, 0, 0, 0 )
 script = ExtResource( 8 )
 __meta__ = {
 "_editor_icon": ExtResource( 9 )
 }
+layer_index = 1
 texture = ExtResource( 10 )
-view_distance = 200.0
-density = 10.0
-shader_params/u_globalmap_tint_bottom = 0.0
-shader_params/u_globalmap_tint_top = 0.0
-shader_params/u_bottom_ao = 0.0
-shader_params/u_instance_scale = Vector3( 1, 1, 1 )
+shader_params/u_globalmap_tint_bottom = null
+shader_params/u_globalmap_tint_top = null
+shader_params/u_bottom_ao = null
+shader_params/u_instance_scale = Vector3( 0.2, 0.2, 0.2 )
 
 [node name="Stone" type="Spatial" parent="HTerrain"]
 script = ExtResource( 8 )
 __meta__ = {
 "_editor_icon": ExtResource( 9 )
 }
-layer_index = 1
 texture = ExtResource( 15 )
 custom_shader = SubResource( 4 )
 instance_mesh = ExtResource( 14 )
@@ -203,3 +200,9 @@ transform = Transform( 1, 0, 0, 0, -0.642788, 0.766045, 0, -0.766045, -0.642788,
 light_color = Color( 1, 0.988235, 0.737255, 1 )
 light_energy = 1.652
 shadow_enabled = true
+
+[node name="house1" parent="." instance=ExtResource( 16 )]
+transform = Transform( -0.999181, 0, 0.040463, 0, 1, 0, -0.040463, 0, -0.999181, 27.659, 1.35707, 10.8267 )
+
+[node name="Spatial" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.993847, 0, -0.110758, 0, 1, 0, 0.110758, 0, -0.993847, 45.148, 1.01, 13.015 )

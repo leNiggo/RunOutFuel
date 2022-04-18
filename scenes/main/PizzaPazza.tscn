@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://model/pizzeria/pizzeria.tscn" type="PackedScene" id=1]
+
+[node name="PizzaPazza" type="Spatial"]
+
+[node name="pizzeria" parent="." instance=ExtResource( 1 )]
