@@ -205,4 +205,4 @@ shadow_enabled = true
 transform = Transform( -0.999181, 0, 0.040463, 0, 1, 0, -0.040463, 0, -0.999181, 27.659, 1.35707, 10.8267 )
 
 [node name="Spatial" parent="." instance=ExtResource( 5 )]
-transform = Transform( -0.993847, 0, -0.110758, 0, 1, 0, 0.110758, 0, -0.993847, 45.1479, 1.19932, 13.0152 )
+transform = Transform( -0.993847, 0, -0.110758, 0, 1, 0, 0.110758, 0, -0.993847, 45.148, 1.01, 13.015 )

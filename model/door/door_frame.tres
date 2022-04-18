@@ -1,9 +1,9 @@
 [gd_resource type="SpatialMaterial" load_steps=5 format=2]
 
-[ext_resource path="res://textures/wood/Wood049_4K_NormalGL.jpg" type="Texture" id=1]
-[ext_resource path="res://textures/wood/Wood049_4K_Displacement.jpg" type="Texture" id=2]
-[ext_resource path="res://textures/wood/Wood049_4K_Roughness.jpg" type="Texture" id=3]
-[ext_resource path="res://textures/wood/Wood049_4K_Color.jpg" type="Texture" id=4]
+[ext_resource path="res://textures/wood/049/Wood049_4K_NormalGL.jpg" type="Texture" id=1]
+[ext_resource path="res://textures/wood/049/Wood049_4K_Displacement.jpg" type="Texture" id=2]
+[ext_resource path="res://textures/wood/049/Wood049_4K_Roughness.jpg" type="Texture" id=3]
+[ext_resource path="res://textures/wood/049/Wood049_4K_Color.jpg" type="Texture" id=4]
 
 [resource]
 albedo_color = Color( 0.74902, 0.74902, 0.74902, 1 )
